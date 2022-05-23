@@ -9,8 +9,8 @@ const Parts = () => {
     ]
     return (
         <div className='my-20 px-10 lg:px-20'>
-            <h1 className='text-primary font-sans text-4xl uppercase'>parts of <span className='text-secondary'>tv</span></h1>
-            <div className='grid grid-cols-1 gap-10 lg:grid-cols-3 mt-20'>
+            <h1 className='text-primary font-sans text-5xl uppercase'>parts of <span className='text-secondary'>tv</span></h1>
+            <div className='grid grid-cols-1 gap-10 lg:grid-cols-3 mt-10'>
                 {
                     parts.map(part => <Part
                         key={part._id}
