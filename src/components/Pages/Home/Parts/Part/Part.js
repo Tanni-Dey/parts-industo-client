@@ -1,7 +1,14 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const Part = ({ part }) => {
-    const { name, des, price, img, minOrderQ, aviableQuantiy } = part;
+    const { _id, name, des, price, img, minOrderQ, aviableQuantiy } = part;
+
+    const handlePurchase = () => {
+        // const param=useParams()
+
+    }
+
     return (
         <div className='shadow-lg rounded-2xl p-5 font-serif'>
             <div className='flex justify-center w-full'>
@@ -12,7 +19,7 @@ const Part = ({ part }) => {
             <p className='text-secondary text-xl font-sans mb-2'>Price :{price}</p>
             <p>Minimum Order Quantity:{minOrderQ}</p>
             <p className=''>Available Quantity :{aviableQuantiy}</p>
-            <button className='btn btn-secondary w-full mt-5 text-primary hover:btn-primary'>Order Now</button>
+            <Link to={`/purchase/${_id}`}><button className='btn btn-secondary w-full mt-5 text-primary hover:btn-primary'>Order Now</button></Link>
         </div>
     );
 };

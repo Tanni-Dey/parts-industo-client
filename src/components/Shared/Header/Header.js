@@ -11,8 +11,18 @@ const Header = () => {
         {
             user ? <li><NavLink onClick={() => signOut(auth)} to='/login'>Logout</NavLink></li> : <li><NavLink to='/login'>Login</NavLink></li>
         }
-        <li><NavLink to='/signup'>SignUp</NavLink></li>
+        {
+            !user && <li><NavLink to='/signup'>SignUp</NavLink></li>
+        }
+        {
+            user && <div class="avatar lg:online placeholder">
+                <div class="bg-accent-focus text-white-content rounded-full w-12">
+                    <span class="text-xs p-2">{user?.displayName} </span>
+                </div>
+            </div>
+        }
     </>
+    console.log(user);
     return (
         <div className='bg-primary lg:px-20'>
             <div class="navbar text-white">
@@ -30,7 +40,6 @@ const Header = () => {
                 <div class="navbar-end hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
                         {navItems}
-                        <button class="btn">Get started</button>
                     </ul>
                 </div>
             </div>

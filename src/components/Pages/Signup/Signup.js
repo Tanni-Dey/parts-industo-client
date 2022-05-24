@@ -1,10 +1,10 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../../../firebase.init';
-import Loading from '../../../Shared/Loading/Loading';
+import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -16,14 +16,8 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    if (gLoading || loading) {
-        return <Loading />
-    }
-
-    if (user || gUser) {
-        navigate('/')
-    }
 
     let gErrorMessage;
     let signupErrorMessage;
@@ -32,15 +26,26 @@ const Signup = () => {
         signupErrorMessage = <p className='text-red-500'><small>{error?.message}</small></p>;
     }
 
-    const onSubmit = (data, e) => {
+    if (gLoading || loading || updating) {
+        return <Loading />
+    }
+
+    if (user || gUser) {
+        navigate('/')
+    }
+
+
+    const onSubmit = async (data, e) => {
         const email = data.email;
         const password = data.password;
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: data.name })
         if (!error) {
             toast.success('Sent Email')
         }
         e.reset()
         console.log(data)
+        console.log(user)
     }
 
     return (

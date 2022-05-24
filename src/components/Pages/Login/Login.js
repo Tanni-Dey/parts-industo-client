@@ -3,9 +3,10 @@ import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const location = useLocation()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -15,21 +16,23 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    let from = location.state?.from?.pathname || "/";
     const onSubmit = (data, e) => {
         const email = data.email;
         const password = data.password;
         signInWithEmailAndPassword(email, password);
-        e.reset()
+        e.target.reset()
         console.log(data)
     }
 
 
     if (gLoading || loading) {
-        return <Loading />
+        <Loading />
     }
 
     if (user || gUser) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     let gErrorMessage;
@@ -62,21 +65,11 @@ const Login = () => {
                 <input type="password" placeholder="Password" class="input input-bordered input-md w-full max-w-xs mb-3" {...register("password", {
                     required: {
                         value: true,
-                        message: "Password is required"
-                    },
-                    pattern: {
-                        value: /[0-9]/,
-                        message: "Please give any valid password with Any Number"
-                    },
-                    minLength: {
-                        value: 6,
-                        message: "Please give 6 character as a password"
+                        message: "Please give your Password"
                     }
                 })} />
                 <label className='label max-w-xs w-full  mx-auto'>
-                    {errors.password?.type === 'required' && <span className='label-text-alt  text-red-600'>{errors.password.message}</span>}
-                    {errors.password?.type === 'pattern' && <span className='label-text-alt text-red-600'>{errors.password.message}</span>}
-                    {errors.password?.type === 'minLength' && <span className='label-text-alt text-red-600'>{errors.password.message}</span>}
+                    {errors.password?.type === 'required' && <span className='label-text-alt  text-red-600'>{errors?.password?.message}</span>}
                 </label><br />
                 {loginErrorMessage}
                 <input type="submit" className='btn btn-primary w-full max-w-xs' value='Login' />
