@@ -17,6 +17,13 @@ const Purchase = () => {
 
 
     const onSubmit = async (data, e) => {
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json()).then(newOrder => console.log(newOrder))
         toast.success('Order Submitted')
         console.log(data);
         e.target.reset()
@@ -46,54 +53,25 @@ const Purchase = () => {
                         <span class="label-text">Your Name :</span>
                     </label>
 
-                    <input type="text" readOnly value={user?.displayName} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("userName"/* , {
-                        required: {
-                            value: true,
-                            message: "Name is required"
-                        }
-                    } */)} />{/* 
-                    <label className='label max-w-xs w-full  mx-auto'>
-                        {errors.name?.type === 'required' && <span className='label-text-alt text-red-600'>{errors?.name?.message}</span>}
-                    </label> */}
+                    <input type="text" readOnly value={user?.displayName} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("userName")} />
+
                     <label className='label max-w-xs w-full  mx-auto'>
                         <span class="label-text">Your Email :</span>
                     </label>
-                    <input type="email" readOnly value={user?.email} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email"/* , {
-                        required: {
-                            value: true,
-                            message: "Email is required"
-                        },
-                        pattern: {
-                            value: /[A-Za-z]{3}/,
-                            message: "Please give any valid email"
-                        }
-                    } */)} />
-                    {/* <label className='label max-w-xs w-full  mx-auto'>
-                        {errors.email?.type === 'required' && <span className='label-text-alt text-red-600'>{errors?.email?.message}</span>}
-                        {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-600'>{errors?.email?.message}</span>}
-                    </label> */}
+                    <input type="email" readOnly value={user?.email} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
+
+
                     <label className='label max-w-xs w-full  mx-auto'>
                         <span class="label-text">Tool Name :</span>
                     </label>
-                    <input type="text" readOnly value={order?.name} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("toolName"/* , {
-                        required: {
-                            value: true,
-                            message: "Password is required"
-                        },
-                        pattern: {
-                            value: /[0-9]/,
-                            message: "Please give any valid password with Any Number"
-                        },
-                        minLength: {
-                            value: 6,
-                            message: "Please give 6 character as a password"
-                        }
-                    } */)} />
-                    {/* <label className='label max-w-xs w-full  mx-auto'>
-                        {errors.password?.type === 'required' && <span className='label-text-alt  text-red-600'>{errors.password.message}</span>}
-                        {errors.password?.type === 'pattern' && <span className='label-text-alt text-red-600'>{errors.password.message}</span>}
-                        {errors.password?.type === 'minLength' && <span className='label-text-alt text-red-600'>{errors.password.message}</span>}
-                    </label> */}
+                    <input type="text" readOnly value={order?.name} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("toolName")} />
+
+
+                    <label className='label max-w-xs w-full  mx-auto'>
+                        <span class="label-text">Tool Price :</span>
+                    </label>
+                    <input type="number" readOnly value={order?.price} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("price")} />
+
                     <label className='label max-w-xs w-full  mx-auto'>
                         <span class="label-text">Order Quantity :</span>
                     </label>

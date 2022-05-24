@@ -10,6 +10,10 @@ import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Purchase from './components/Pages/Purchase/Purchase';
 import RequiredAuth from './components/Shared/RequiredAuth/RequiredAuth';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
+import MyProfile from './components/Pages/Dashboard/MyProfile/MyProfile';
+import MyOrders from './components/Pages/Dashboard/MyOrders/MyOrders';
+import AddReview from './components/Pages/Dashboard/AddReview/AddReview';
 
 function App() {
   return (
@@ -23,6 +27,13 @@ function App() {
         <Route path='/purchase/:id' element={<RequiredAuth>
           <Purchase />
         </RequiredAuth>} />
+        <Route path='dashboard' element={<RequiredAuth>
+          <Dashboard />
+        </RequiredAuth>}>
+          <Route index element={<MyProfile />} />
+          <Route path='myorder' element={<MyOrders />} />
+          <Route path='addreview' element={<AddReview />} />
+        </Route>
         <Route path='*' element={<Notfound />} />
       </Routes>
       <Footer />

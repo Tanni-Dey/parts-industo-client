@@ -15,9 +15,12 @@ const Header = () => {
             !user && <li><NavLink to='/signup'>SignUp</NavLink></li>
         }
         {
+            user && <li> <NavLink to='/dashboard'>Dashboard</NavLink></li>
+        }
+        {
             user && <div class="avatar lg:online placeholder">
                 <div class="bg-accent-focus text-white-content rounded-full w-12">
-                    <span class="text-xs p-2">{user?.displayName} </span>
+                    <span class="text-xs p-2">{user.displayName} </span>
                 </div>
             </div>
         }

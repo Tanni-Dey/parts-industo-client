@@ -1,13 +1,8 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Part = ({ part }) => {
     const { _id, name, des, price, img, minOrderQ, aviableQuantiy } = part;
-
-    const handlePurchase = () => {
-        // const param=useParams()
-
-    }
 
     return (
         <div className='shadow-lg rounded-2xl p-5 font-serif'>
