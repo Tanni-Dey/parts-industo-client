@@ -36,6 +36,7 @@ const MyOrders = () => {
                             <td>{order.price}</td>
                             <td>{order.orderQuantity}</td>
                             <Link to='' className='btn btn-secondary btn-sm'>Payment</Link>
+                            <Link to='' className='btn btn-secondary btn-sm'>cancel</Link>
                         </tr>)
                     }
 
