@@ -21,7 +21,6 @@ const AddReview = () => {
         }).then(res => res.json()).then(uploadImg => {
             if (uploadImg.success) {
                 const img = uploadImg.data.url;
-                // data.image = img;
                 const review = {
                     userName: data.userName,
                     email: data.email,
@@ -55,8 +54,8 @@ const AddReview = () => {
 
     }
     return (
-        <div className='my-20'>
-            <h2 className='text-primary font-sans text-3xl'>Give <span className='text-secondary'>Your Review</span></h2>
+        <div className='my-10'>
+            <h2 className='text-primary font-sans text-2xl'>Give <span className='text-secondary'>Your Review</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
                 <input type="email" readOnly value={user.email} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
                 <br />
