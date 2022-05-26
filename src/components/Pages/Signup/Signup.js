@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading/Loading';
 
 const Signup = () => {
@@ -17,6 +18,7 @@ const Signup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user || gUser)
 
 
     let gErrorMessage;
@@ -29,8 +31,8 @@ const Signup = () => {
     if (gLoading || loading || updating) {
         return <Loading />
     }
-
-    if (user || gUser) {
+    // console.log(token);
+    if (token) {
         navigate('/')
     }
 

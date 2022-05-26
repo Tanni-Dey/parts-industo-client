@@ -14,6 +14,8 @@ import Dashboard from './components/Pages/Dashboard/Dashboard';
 import MyProfile from './components/Pages/Dashboard/MyProfile/MyProfile';
 import MyOrders from './components/Pages/Dashboard/MyOrders/MyOrders';
 import AddReview from './components/Pages/Dashboard/AddReview/AddReview';
+import Users from './components/Pages/Dashboard/Users/Users';
+import RequireAdmin from './components/Shared/RequireAdmin/RequireAdmin';
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
           <Route index element={<MyProfile />} />
           <Route path='myorder' element={<MyOrders />} />
           <Route path='addreview' element={<AddReview />} />
+          <Route path='user' element={<RequireAdmin>
+            <Users />
+          </RequireAdmin>} />
         </Route>
         <Route path='*' element={<Notfound />} />
       </Routes>

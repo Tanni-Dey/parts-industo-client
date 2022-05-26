@@ -23,6 +23,7 @@ const Reviews = () => {
                             <h6 className='text-md font-sans capitalize text-primary '>{singleReview.userName}</h6>
                             <p>{singleReview.review}</p>
                             <div class="rating rating-xs">
+                                <span className='mr-2'>rating: {singleReview.rating}</span>
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
