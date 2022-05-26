@@ -20,7 +20,7 @@ const Parts = () => {
             <h1 className='text-primary font-sans text-5xl uppercase'>parts of <span className='text-secondary'>tv</span></h1>
             <div className='grid grid-cols-1 gap-10 lg:grid-cols-3 mt-10'>
                 {
-                    parts.reverse().slice(0, 3).map(part => <Part
+                    parts.slice(0, 3).map(part => <Part
                         key={part._id}
                         part={part}
                     />)

@@ -34,8 +34,8 @@ const Purchase = () => {
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 px-10 py-20 lg:px-20'>
-            <div className='shadow-lg rounded-2xl p-10 font-serif flex items-center text-left'>
-                <div className=' w-full'>
+            <div className='shadow-lg rounded-2xl p-10 font-serif '>
+                <div className='flex justify-center w-full'>
                     <img src={order?.img} alt="" />
                 </div>
                 <div>

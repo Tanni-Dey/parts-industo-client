@@ -21,10 +21,18 @@ const Dashboard = () => {
                 <ul class="menu p-4 overflow-y-auto w-80 bg-accent text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>My Profile</Link></li>
-                    <li><NavLink to='/dashboard/myorder'>My Orders</NavLink></li>
-                    <li><NavLink to='/dashboard/addreview'>Add Review</NavLink></li>
                     {
-                        admin && <li><NavLink to='/dashboard/user'>All Users</NavLink></li>
+                        !admin && <>
+                            <li><NavLink to='/dashboard/myorder'>My Orders</NavLink></li>
+                            <li><NavLink to='/dashboard/addreview'>Add Review</NavLink></li>
+                        </>
+                    }
+                    {
+                        admin && <>
+                            <li><NavLink to='/dashboard/makeadmin'>Make Admin</NavLink></li>
+                            <li><NavLink to='/dashboard/addproduct'>Add Product</NavLink></li>
+                            <li><NavLink to='/dashboard/manageproducts'>Manage Products</NavLink></li>
+                        </>
                     }
                 </ul>
 

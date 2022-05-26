@@ -51,6 +51,7 @@ const AddReview = () => {
 
             }
         })
+        e.target.reset()
 
     }
     return (
