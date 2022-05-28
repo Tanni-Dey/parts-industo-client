@@ -12,7 +12,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
 
-    const { data: myorders, isLoading, refetch } = useQuery(['myorders', user.email], () => fetch(`http://localhost:5000/myorder?email=${user.email}`, {
+    const { data: myorders, isLoading, refetch } = useQuery(['myorders', user.email], () => fetch(`https://evening-eyrie-81850.herokuapp.com/myorder?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const currentOrder = myorders.find(order => order._id === id)
         if (!currentOrder.paid) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -52,8 +52,8 @@ const MyOrders = () => {
     }
 
     return (
-        <div class="overflow-x-auto">
-            <table class="table table-zebra w-full">
+        <div className="overflow-x-auto">
+            <table className="table table-zebra w-full">
                 <thead>
                     <tr>
                         <th></th>
@@ -81,14 +81,14 @@ const MyOrders = () => {
 
                             {order.status ? <td className='text-warning capitalize'>{order.status}</td> : <td><label for="my-modal-6" className='btn modal-button btn-secondary btn-sm'>cancel</label>
 
-                                <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-                                <div class="modal sm:modal-middle">
-                                    <div class="modal-box">
-                                        <h3 class="font-bold text-lg">Are you want cancle this order ?</h3>
-                                        <p class="py-4">Select Yes or No</p>
-                                        <div class="modal-action">
-                                            <label for="my-modal-6" class="btn btn-sm btn-error">No</label>
-                                            <label onClick={() => handleDelete(order._id)} for="my-modal-6" class="btn btn-sm btn-success">Yes</label>
+                                <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+                                <div className="modal sm:modal-middle">
+                                    <div className="modal-box">
+                                        <h3 className="font-bold text-lg">Are you want cancle this order ?</h3>
+                                        <p className="py-4">Select Yes or No</p>
+                                        <div className="modal-action">
+                                            <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
+                                            <label onClick={() => handleDelete(order._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                                         </div>
                                     </div>
                                 </div></td>}

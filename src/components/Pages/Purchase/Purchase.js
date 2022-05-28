@@ -13,11 +13,11 @@ const Purchase = () => {
     const [user] = useAuthState(auth)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const { data: order, isLoading } = useQuery('order', () => fetch(`http://localhost:5000/tool/${id}`).then(res => res.json()))
+    const { data: order, isLoading } = useQuery('order', () => fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`).then(res => res.json()))
 
 
     const onSubmit = async (data, e) => {
-        fetch('http://localhost:5000/order', {
+        fetch('https://evening-eyrie-81850.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,32 +50,32 @@ const Purchase = () => {
                 <h2 className='text-primary font-sans text-3xl'>Place <span className='text-secondary'>Order</span></h2>
                 <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Your Name :</span>
+                        <span className="label-text">Your Name :</span>
                     </label>
 
-                    <input type="text" readOnly value={user?.displayName} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("userName")} />
+                    <input type="text" readOnly value={user?.displayName} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("userName")} />
 
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Your Email :</span>
+                        <span className="label-text">Your Email :</span>
                     </label>
-                    <input type="email" readOnly value={user?.email} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
-
-
-                    <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Tool Name :</span>
-                    </label>
-                    <input type="text" readOnly value={order?.name} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("toolName")} />
+                    <input type="email" readOnly value={user?.email} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
 
 
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Tool Price :</span>
+                        <span className="label-text">Tool Name :</span>
                     </label>
-                    <input type="number" readOnly value={order?.price} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("price")} />
+                    <input type="text" readOnly value={order?.name} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("toolName")} />
+
 
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Order Quantity :</span>
+                        <span className="label-text">Tool Price :</span>
                     </label>
-                    <input type="number" placeholder='Your order quantity' defaultValue={order?.minOrderQ} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("orderQuantity", {
+                    <input type="number" readOnly value={order?.price} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("price")} />
+
+                    <label className='label max-w-xs w-full  mx-auto'>
+                        <span className="label-text">Order Quantity :</span>
+                    </label>
+                    <input type="number" placeholder='Your order quantity' defaultValue={order?.minOrderQ} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("orderQuantity", {
                         required: {
                             value: true,
                             message: "Please give your order Quantity"
@@ -98,9 +98,9 @@ const Purchase = () => {
 
 
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Your Address :</span>
+                        <span className="label-text">Your Address :</span>
                     </label>
-                    <input type="text" placeholder='Your Address' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("address", {
+                    <input type="text" placeholder='Your Address' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("address", {
                         required: {
                             value: true,
                             message: "Give your Address for confirm order"
@@ -113,9 +113,9 @@ const Purchase = () => {
 
 
                     <label className='label max-w-xs w-full  mx-auto'>
-                        <span class="label-text">Your Phone Number :</span>
+                        <span className="label-text">Your Phone Number :</span>
                     </label>
-                    <input type="number" placeholder='Your Phone Number' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("phone", {
+                    <input type="number" placeholder='Your Phone Number' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("phone", {
                         required: {
                             value: true,
                             message: "Give your Phone number for confirm order"

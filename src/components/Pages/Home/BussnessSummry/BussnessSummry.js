@@ -10,37 +10,37 @@ const BussnessSummry = () => {
     return (
         <div className='mb-20'>
             <h1 className='text-primary font-sans text-5xl uppercase'>Why choose <span className='text-secondary'>us</span></h1>
-            <div class="stats stats-vertical lg:stats-horizontal shadow-2xl my-10">
+            <div className="stats stats-vertical lg:stats-horizontal shadow-2xl my-10">
 
-                <div class="stat">
-                    <div class="stat-figure text-primary text-2xl">
+                <div className="stat">
+                    <div className="stat-figure text-primary text-2xl">
                         <VscTools />
                     </div>
-                    <div class="stat-title">Tools</div>
-                    <div class="stat-value text-primary">50+</div>
+                    <div className="stat-title">Tools</div>
+                    <div className="stat-value text-primary">50+</div>
                 </div>
 
-                <div class="stat">
-                    <div class="stat-figure text-secondary text-2xl">
+                <div className="stat">
+                    <div className="stat-figure text-secondary text-2xl">
                         <IoIosPeople />
                     </div>
-                    <div class="stat-title">Customers</div>
-                    <div class="stat-value text-secondary">100+</div>
+                    <div className="stat-title">Customers</div>
+                    <div className="stat-value text-secondary">100+</div>
                 </div>
 
-                <div class="stat">
-                    <div class="stat-figure text-secondary text-2xl">
+                <div className="stat">
+                    <div className="stat-figure text-secondary text-2xl">
                         <AiOutlineLineChart />
                     </div>
-                    <div class="stat-title">Annual revenue</div>
-                    <div class="stat-value text-primary">120M+</div>
+                    <div className="stat-title">Annual revenue</div>
+                    <div className="stat-value text-primary">120M+</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-figure text-secondary text-2xl">
+                <div className="stat">
+                    <div className="stat-figure text-secondary text-2xl">
                         <BiCommentDetail />
                     </div>
-                    <div class="stat-title">Reviews</div>
-                    <div class="stat-value text-secondary">33K+</div>
+                    <div className="stat-title">Reviews</div>
+                    <div className="stat-value text-secondary">33K+</div>
                 </div>
 
             </div>
@@ -64,19 +64,19 @@ const BussnessSummry = () => {
                     <h2 className='text-3xl font-sans text-left  mb-10 mt-5'>Get a solution for all your needs.</h2>
                     <div className='mb-3'>
                         <p className='flex justify-between'><span>Production</span><span>80%</span></p>
-                        <input type="range" min="0" max="100" value="80" class="range range-primary range-xs my-2" />
+                        <input type="range" min="0" max="100" value="80" className="range range-primary range-xs my-2" />
                     </div>
                     <div className='mb-3'>
                         <p className='flex justify-between'><span>International</span><span>70%</span></p>
-                        <input type="range" min="0" max="100" value="70" class="range range-primary range-xs my-2" />
+                        <input type="range" min="0" max="100" value="70" className="range range-primary range-xs my-2" />
                     </div>
                     <div className='mb-3'>
                         <p className='flex justify-between'><span>Customer Satisfaction</span><span>90%</span></p>
-                        <input type="range" min="0" max="100" value="90" class="range range-primary range-xs my-2" />
+                        <input type="range" min="0" max="100" value="90" className="range range-primary range-xs my-2" />
                     </div>
                     <div>
                         <p className='flex justify-between'><span>Utilization Rate</span><span>60%</span></p>
-                        <input type="range" min="0" max="100" value="60" class="range range-primary range-xs my-2" />
+                        <input type="range" min="0" max="100" value="60" className="range range-primary range-xs my-2" />
                     </div>
                 </div>
             </div>

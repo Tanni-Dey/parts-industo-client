@@ -55,7 +55,7 @@ const Signup = () => {
         <div className='my-20'>
             <h2 className='text-primary font-sans text-3xl'>Please <span className='text-secondary'>Sign Up</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="Your Name" class="input input-bordered input-md w-full max-w-xs mb-2" {...register("name", {
+                <input type="text" placeholder="Your Name" className="input input-bordered input-md w-full max-w-xs mb-2" {...register("name", {
                     required: {
                         value: true,
                         message: "Name is required"
@@ -64,7 +64,7 @@ const Signup = () => {
                 <label className='label max-w-xs w-full  mx-auto'>
                     {errors.name?.type === 'required' && <span className='label-text-alt text-red-600'>{errors?.name?.message}</span>}
                 </label>
-                <input type="email" placeholder="Your Email" class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email", {
+                <input type="email" placeholder="Your Email" className="input input-bordered input-md w-full max-w-xs mb-2" {...register("email", {
                     required: {
                         value: true,
                         message: "Email is required"
@@ -79,7 +79,7 @@ const Signup = () => {
                     {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-600'>{errors?.email?.message}</span>}
                 </label>
                 <br />
-                <input type="password" placeholder="Password" class="input input-bordered input-md w-full max-w-xs mb-3" {...register("password", {
+                <input type="password" placeholder="Password" className="input input-bordered input-md w-full max-w-xs mb-3" {...register("password", {
                     required: {
                         value: true,
                         message: "Password is required"
@@ -102,7 +102,7 @@ const Signup = () => {
                 <input type="submit" className='btn btn-primary w-full max-w-xs' value='Sign up' />
             </form>
             <p >Already have an Account ? <Link className='text-secondary' to='/login'>Login</Link></p>
-            <div class="divider mx-auto max-w-xs">OR</div>
+            <div className="divider mx-auto max-w-xs">OR</div>
             {gErrorMessage}
             <button onClick={() => signInWithGoogle()} className='btn btn-outline w-full max-w-xs'>Google Sign in</button>
         </div>

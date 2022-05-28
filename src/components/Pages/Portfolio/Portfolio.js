@@ -14,74 +14,74 @@ const Portfolio = () => {
                 <h4 className='text-primary mb-20 text-xl text-left font-sans'>My Skills</h4>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>HTML</span><span>80%</span></p>
-                    <input type="range" min="0" max="100" value="80" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="80" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>CSS</span><span>70%</span></p>
-                    <input type="range" min="0" max="100" value="70" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="70" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>Bootstrap</span><span>70%</span></p>
-                    <input type="range" min="0" max="100" value="70" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="70" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>Tailwind Css</span><span>75%</span></p>
-                    <input type="range" min="0" max="100" value="75" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="75" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>Daisy Ui</span><span>75%</span></p>
-                    <input type="range" min="0" max="100" value="75" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="75" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>JAVASCRIPT</span><span>65%</span></p>
-                    <input type="range" min="0" max="100" value="65" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="65" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>React Js</span><span>70%</span></p>
-                    <input type="range" min="0" max="100" value="70" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="70" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>MongoDB</span><span>30%</span></p>
-                    <input type="range" min="0" max="100" value="30" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="30" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>Node Js</span><span>30%</span></p>
-                    <input type="range" min="0" max="100" value="30" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="30" className="range range-primary range-xs my-2" />
                 </div>
                 <div className='mb-3'>
                     <p className='flex justify-between'><span>Express Js</span><span>30%</span></p>
-                    <input type="range" min="0" max="100" value="30" class="range range-primary range-xs my-2" />
+                    <input type="range" min="0" max="100" value="30" className="range range-primary range-xs my-2" />
                 </div>
             </div>
             <div className='my-20'>
                 <div className='grid grid-cols-1 gap-5 mx-10 lg:mx-20 lg:grid-cols-3'>
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/sJVL5kt/Screenshot-146.png" alt="book-closet" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title">Book Closet</h2>
+                        <div className="card-body">
+                            <h2 className="card-title">Book Closet</h2>
                             <p className='text-left'>Warehouse Project</p>
-                            <div class="card-actions justify-end">
-                                <a target='_blank' href="https://book-closet.web.app//"><button class="btn btn-sm btn-primary">Live site</button></a>
+                            <div className="card-actions justify-end">
+                                <a target='_blank' href="https://book-closet.web.app//"><button className="btn btn-sm btn-primary">Live site</button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/x191RRk/Screenshot-147.png" alt="book-closet" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title">Unique Photography</h2>
+                        <div className="card-body">
+                            <h2 className="card-title">Unique Photography</h2>
                             <p className='text-left'>Photography Porfolio Project</p>
-                            <div class="card-actions justify-end">
-                                <a target='_blank' href="https://unique-photograpy.web.app/"><button class="btn btn-sm btn-primary">Live site</button></a>
+                            <div className="card-actions justify-end">
+                                <a target='_blank' href="https://unique-photograpy.web.app/"><button className="btn btn-sm btn-primary">Live site</button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/GxhLr6j/Screenshot-148.png" alt="book-closet" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title">Furniture Reviews</h2>
+                        <div className="card-body">
+                            <h2 className="card-title">Furniture Reviews</h2>
                             <p className='text-left'>Product Review Project</p>
-                            <div class="card-actions justify-end">
-                                <a target='_blank' href="https://furniture-review.netlify.app/"><button class="btn btn-sm btn-primary">Live site</button></a>
+                            <div className="card-actions justify-end">
+                                <a target='_blank' href="https://furniture-review.netlify.app/"><button className="btn btn-sm btn-primary">Live site</button></a>
                             </div>
                         </div>
                     </div>

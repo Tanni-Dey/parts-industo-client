@@ -27,7 +27,7 @@ const AddProduct = () => {
                     minOrderQ: data.minOrderQ,
                     aviableQuantiy: data.aviableQuantiy
                 }
-                fetch('http://localhost:5000/addtool', {
+                fetch('https://evening-eyrie-81850.herokuapp.com/addtool', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -53,7 +53,7 @@ const AddProduct = () => {
             <h2 className='text-primary font-sans text-2xl'>Add <span className='text-secondary'>Product</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
 
-                <input type="text" placeholder='Product Name' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("name", {
+                <input type="text" placeholder='Product Name' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("name", {
                     required: {
                         value: true,
                         message: "Please give Product Name"
@@ -63,7 +63,7 @@ const AddProduct = () => {
                     {errors.name?.type === 'required' && <span className='label-text-alt  text-red-600'>{errors?.name?.message}</span>}
                 </label>
 
-                <textarea type="text" placeholder='Product Description' class="input input-bordered input-md w-full max-w-xs mb-2 textarea" {...register("des", {
+                <textarea type="text" placeholder='Product Description' className="input input-bordered input-md w-full max-w-xs mb-2 textarea" {...register("des", {
                     required: {
                         value: true,
                         message: "Please give Product Description"
@@ -74,7 +74,7 @@ const AddProduct = () => {
                 </label>
 
 
-                <input type="number" placeholder='Minimum Order Quantity' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("minOrderQ", {
+                <input type="number" placeholder='Minimum Order Quantity' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("minOrderQ", {
                     required: {
                         value: true,
                         message: "Please give Minimum Order Quantity"
@@ -85,7 +85,7 @@ const AddProduct = () => {
                 </label>
 
 
-                <input type="number" placeholder='Available Quantity' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("aviableQuantiy", {
+                <input type="number" placeholder='Available Quantity' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("aviableQuantiy", {
                     required: {
                         value: true,
                         message: "Please give Available Product Quantity"
@@ -95,7 +95,7 @@ const AddProduct = () => {
                     {errors.aviableQuantiy?.type === 'required' && <span className='label-text-alt  text-red-600'>{errors?.aviableQuantiy?.message}</span>}
                 </label>
 
-                <input type="number" placeholder='Product Price' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("price", {
+                <input type="number" placeholder='Product Price' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("price", {
                     required: {
                         value: true,
                         message: "Please give Product Price"
@@ -107,7 +107,7 @@ const AddProduct = () => {
 
 
 
-                <input type="file" class="input input-bordered input-md w-full max-w-xs mb-2" {...register("img", {
+                <input type="file" className="input input-bordered input-md w-full max-w-xs mb-2" {...register("img", {
                     required: {
                         value: true,
                         message: "Please Choose an Product Image"

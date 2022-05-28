@@ -5,7 +5,7 @@ import Loading from '../../../Shared/Loading/Loading';
 import SingleOrder from './SingleOrder';
 
 const ManageOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/order', {
+    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('https://evening-eyrie-81850.herokuapp.com/order', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -18,7 +18,7 @@ const ManageOrders = () => {
 
 
     const handleShipped = (id) => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
             method: 'PATCH',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,8 +31,8 @@ const ManageOrders = () => {
 
 
     return (
-        <div class="overflow-x-auto">
-            <table class="table table-zebra w-full">
+        <div className="overflow-x-auto">
+            <table className="table table-zebra w-full">
                 <thead>
                     <tr>
                         <th></th>

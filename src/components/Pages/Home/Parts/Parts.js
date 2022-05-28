@@ -10,7 +10,7 @@ const Parts = () => {
     //     { _id: 3, name: 'Tv Mainboards Processor', des: 'Item Condition: UsedProcessor Brand: IntelApplication: DesktopModel Number: i5 3570Type: Quad-CoreCPU Frequency: 3.4 GHzProcessor Type: Intel CoreL2 Cache Capacity: 1 MB,6 MBL3 Cache Capacity: 8 MBPower: 77 WPackage: NoLaunch Date: 2012Chip Process: 22 nanometersMain Frequency: 3.4Number of Cores: Quad-Core64-Bit Support: YesInterface Type: LGA 1155,LGA 1155Brand Name: IntelIntel Model: Core i5 3570Socket Type: LGA1155', img: 'https://5.imimg.com/data5/SELLER/Default/2022/5/QK/HX/QX/37106317/gold-97e-led-tv-inverter-250x250.jpg', price: 29, minOrderQ: 1000, aviableQuantiy: 250000 }
     // ]
 
-    const { data: parts, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tool').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('tools', () => fetch('https://evening-eyrie-81850.herokuapp.com/tool').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

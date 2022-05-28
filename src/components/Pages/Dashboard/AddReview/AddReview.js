@@ -29,7 +29,7 @@ const AddReview = () => {
                     rating: data.rating
                 }
                 //create review
-                fetch('http://localhost:5000/review', {
+                fetch('https://evening-eyrie-81850.herokuapp.com/review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -58,11 +58,11 @@ const AddReview = () => {
         <div className='my-10'>
             <h2 className='text-primary font-sans text-2xl'>Give <span className='text-secondary'>Your Review</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" readOnly value={user.email} class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
+                <input type="email" readOnly value={user.email} className="input input-bordered input-md w-full max-w-xs mb-2" {...register("email")} />
                 <br />
-                <input type="text" readOnly value={user.displayName} class="input input-bordered input-md w-full max-w-xs mb-3" {...register("userName")} />
+                <input type="text" readOnly value={user.displayName} className="input input-bordered input-md w-full max-w-xs mb-3" {...register("userName")} />
                 <br />
-                <textarea type="text" placeholder='Write Your Review' class="input input-bordered input-md w-full max-w-xs mb-3 textarea" {...register("review", {
+                <textarea type="text" placeholder='Write Your Review' className="input input-bordered input-md w-full max-w-xs mb-3 textarea" {...register("review", {
                     required: {
                         value: true,
                         message: "Please give your Review"
@@ -72,7 +72,7 @@ const AddReview = () => {
                     {errors.review?.type === 'required' && <span className='label-text-alt text-red-600'>{errors?.review?.message}</span>}
                 </label>
 
-                <input type="number" placeholder='Give any Rating' class="input input-bordered input-md w-full max-w-xs mb-3" {...register("rating", {
+                <input type="number" placeholder='Give any Rating' className="input input-bordered input-md w-full max-w-xs mb-3" {...register("rating", {
                     required: {
                         value: true,
                         message: "Please give any Rating"
@@ -87,7 +87,7 @@ const AddReview = () => {
                     {errors.rating?.type === 'max' && <span className='label-text-alt text-red-600'>{errors?.rating?.message}</span>}
                 </label>
 
-                <input type="file" placeholder='Write Your Review' class="input input-bordered input-md w-full max-w-xs mb-3" {...register("image", {
+                <input type="file" placeholder='Write Your Review' className="input input-bordered input-md w-full max-w-xs mb-3" {...register("image", {
                     required: {
                         value: true,
                         message: "Please upload your image"

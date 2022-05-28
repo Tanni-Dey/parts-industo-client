@@ -7,7 +7,7 @@ const SingleOrder = ({ order, refetch }) => {
 
     const handleDelete = id => {
         if (!order.paid) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,14 +25,14 @@ const SingleOrder = ({ order, refetch }) => {
     return (
 
         <div>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal sm:modal-middle">
-                <div class="modal-box w-11/12 max-w-5xl">
-                    <h3 class="font-bold text-lg">Are you want cancel this order ?</h3>
-                    <p class="py-4">Select Yes or No</p>
-                    <div class="modal-action">
-                        <label for="my-modal-6" class="btn btn-sm btn-error">No</label>
-                        <label onClick={() => handleDelete(order._id)} for="my-modal-6" class="btn btn-sm btn-success">Yes</label>
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal sm:modal-middle">
+                <div className="modal-box w-11/12 max-w-5xl">
+                    <h3 className="font-bold text-lg">Are you want cancel this order ?</h3>
+                    <p className="py-4">Select Yes or No</p>
+                    <div className="modal-action">
+                        <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
+                        <label onClick={() => handleDelete(order._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                     </div>
                 </div>
             </div>

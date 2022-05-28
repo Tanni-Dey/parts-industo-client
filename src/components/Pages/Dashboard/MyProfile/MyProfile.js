@@ -9,7 +9,7 @@ import Loading from '../../../Shared/Loading/Loading';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/profile?email=${user.email}`, {
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://evening-eyrie-81850.herokuapp.com/profile?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const MyProfile = () => {
                     phone: data.phone,
                     linkedin: data.linkedin
                 }
-                fetch(`http://localhost:5000/profile?email=${user.email}`, {
+                fetch(`https://evening-eyrie-81850.herokuapp.com/profile?email=${user.email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
@@ -65,16 +65,16 @@ const MyProfile = () => {
                 <div className='text-left px-10 mt-20'>
 
 
-                    <div class="card w-full bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
+                    <div className="card w-full bg-base-100 shadow-xl">
+                        <figure className="px-10 pt-10">
                             {
-                                profile.image && <img className='h-44' src={profile.image} alt="Profile" class="rounded-xl" />
+                                profile.image && <img className='h-44' src={profile.image} alt="Profile" className="rounded-xl" />
                             }
                         </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title text-secondary font-sans">{user.displayName}</h2>
+                        <div className="card-body items-center text-center">
+                            <h2 className="card-title text-secondary font-sans">{user.displayName}</h2>
                             <p>Email : {user.email}</p>
-                            <div class="card-actions text-serif text-md">
+                            <div className="card-actions text-serif text-md">
                                 {
                                     profile.location && <p>Address: {profile.location}</p>
                                 }
@@ -96,14 +96,14 @@ const MyProfile = () => {
                     <h2 className='text-secondary font-sans text-xl'>Update Profile</h2>
                     <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
                         <br />
-                        <textarea type="text" placeholder='Write Your Educational Qualification' class="input input-bordered input-md w-full max-w-xs mb-3 textarea" {...register("education")} />
+                        <textarea type="text" placeholder='Write Your Educational Qualification' className="input input-bordered input-md w-full max-w-xs mb-3 textarea" {...register("education")} />
 
-                        <input type="text" placeholder='Write your Location' class="input input-bordered input-md w-full max-w-xs mb-3" {...register("location")} />
+                        <input type="text" placeholder='Write your Location' className="input input-bordered input-md w-full max-w-xs mb-3" {...register("location")} />
 
-                        <input type="number" placeholder='Phone Number' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("phone")} /><br />
-                        <input type="text" placeholder='Linkedin Profile Link' class="input input-bordered input-md w-full max-w-xs mb-2" {...register("linkedin")} />
+                        <input type="number" placeholder='Phone Number' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("phone")} /><br />
+                        <input type="text" placeholder='Linkedin Profile Link' className="input input-bordered input-md w-full max-w-xs mb-2" {...register("linkedin")} />
 
-                        <input type="file" class="input input-bordered input-md w-full max-w-xs mb-3" {...register("image")} />
+                        <input type="file" className="input input-bordered input-md w-full max-w-xs mb-3" {...register("image")} />
                         <input type="submit" className='btn btn-primary w-full max-w-xs' value='Update Profile' />
                     </form>
                 </div>

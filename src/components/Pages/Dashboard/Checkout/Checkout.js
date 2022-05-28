@@ -16,7 +16,7 @@ const Checkout = ({ orderdata }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://evening-eyrie-81850.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const Checkout = ({ orderdata }) => {
                 transactionid: paymentIntent?.id
             }
 
-            fetch(`http://localhost:5000/payment/${_id}`, {
+            fetch(`https://evening-eyrie-81850.herokuapp.com/payment/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

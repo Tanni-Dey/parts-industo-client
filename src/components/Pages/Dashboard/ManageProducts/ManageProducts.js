@@ -4,14 +4,14 @@ import { RiDeleteBin6Line } from 'react-icons/ri'
 import Loading from '../../../Shared/Loading/Loading';
 
 const ManageProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/tool').then(res => res.json()))
+    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('https://evening-eyrie-81850.herokuapp.com/tool').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/tool/${id}`, {
+        fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,8 @@ const ManageProducts = () => {
     }
 
     return (
-        <div class="overflow-x-auto">
-            <table class="table table-zebra w-full">
+        <div className="overflow-x-auto">
+            <table className="table table-zebra w-full">
                 <thead>
                     <tr>
                         <th></th>
@@ -48,14 +48,14 @@ const ManageProducts = () => {
 
                             <td><label for="my-modal-6" className='btn modal-button bg-red-600 border-0 btn-sm rounded-full text-white text-xl'><RiDeleteBin6Line /></label></td>
 
-                            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-                            <div class="modal sm:modal-middle">
-                                <div class="modal-box">
-                                    <h3 class="font-bold text-lg">Are you want delete this product ?</h3>
-                                    <p class="py-4">Select Yes or No</p>
-                                    <div class="modal-action">
-                                        <label for="my-modal-6" class="btn btn-sm btn-error">No</label>
-                                        <label onClick={() => handleDelete(product._id)} for="my-modal-6" class="btn btn-sm btn-success">Yes</label>
+                            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+                            <div className="modal sm:modal-middle">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg">Are you want delete this product ?</h3>
+                                    <p className="py-4">Select Yes or No</p>
+                                    <div className="modal-action">
+                                        <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
+                                        <label onClick={() => handleDelete(product._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                                     </div>
                                 </div>
                             </div>

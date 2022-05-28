@@ -49,7 +49,7 @@ const Login = () => {
         <div className='my-20'>
             <h2 className='text-primary font-sans text-3xl'>Please <span className='text-secondary'>Login</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" placeholder="Your Email" class="input input-bordered input-md w-full max-w-xs mb-2" {...register("email", {
+                <input type="email" placeholder="Your Email" className="input input-bordered input-md w-full max-w-xs mb-2" {...register("email", {
                     required: {
                         value: true,
                         message: "Email is required"
@@ -64,7 +64,7 @@ const Login = () => {
                     {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-600'>{errors?.email?.message}</span>}
                 </label>
                 <br />
-                <input type="password" placeholder="Password" class="input input-bordered input-md w-full max-w-xs mb-3" {...register("password", {
+                <input type="password" placeholder="Password" className="input input-bordered input-md w-full max-w-xs mb-3" {...register("password", {
                     required: {
                         value: true,
                         message: "Please give your Password"
@@ -78,7 +78,7 @@ const Login = () => {
             </form>
             <p >Create an Account ? <Link className='text-secondary' to='/signup'>Sign up</Link></p>
             <p>forget password ? <button className='text-secondary' >Reset Password</button></p>
-            <div class="divider mx-auto max-w-xs">OR</div>
+            <div className="divider mx-auto max-w-xs">OR</div>
             {gErrorMessage}
             <button onClick={() => signInWithGoogle()} className='btn btn-outline w-full max-w-xs'>Google Sign in</button>
         </div>
