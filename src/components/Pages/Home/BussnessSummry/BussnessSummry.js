@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const BussnessSummry = () => {
     return (
         <div className='mb-20'>
-            <h1 className='text-primary font-sans text-5xl uppercase'>Why choose <span className='text-secondary'>us</span></h1>
+            <h1 className='text-primary font-sans text-3xl lg:text-5xl uppercase'>Why choose <span className='text-secondary'>us</span></h1>
             <div className="stats stats-vertical lg:stats-horizontal shadow-2xl my-10">
 
                 <div className="stat">
