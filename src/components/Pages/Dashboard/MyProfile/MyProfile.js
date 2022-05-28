@@ -68,7 +68,7 @@ const MyProfile = () => {
                     <div class="card w-full bg-base-100 shadow-xl">
                         <figure class="px-10 pt-10">
                             {
-                                profile.image && <img src={profile.image} alt="Profile" class="rounded-xl" />
+                                profile.image && <img className='h-44' src={profile.image} alt="Profile" class="rounded-xl" />
                             }
                         </figure>
                         <div class="card-body items-center text-center">

@@ -46,7 +46,7 @@ const BussnessSummry = () => {
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-2 text-white'>
-                <div className='p-5 bg-primary'>
+                <div className='p-5 lg:pl-16 bg-primary'>
                     <h4 className='text-left text-4xl font-sans'>Quality Resourcing</h4>
                     <h4 className='text-left text-4xl text-secondary font-sans mt-2'> & Analytics</h4>
 
@@ -59,7 +59,7 @@ const BussnessSummry = () => {
 
                     <a className=' btn btn-link mt-5  text-secondary' href='/'>Read More <span className='ml-3'><AiOutlineArrowRight /></span></a>
                 </div>
-                <div className='p-5 bg-secondary'>
+                <div className='p-5 lg:pr-16 bg-secondary'>
                     <h4 className='text-primary text-xl text-left font-sans'>Our Skills</h4>
                     <h2 className='text-3xl font-sans text-left  mb-10 mt-5'>Get a solution for all your needs.</h2>
                     <div className='mb-3'>

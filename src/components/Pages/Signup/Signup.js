@@ -40,12 +40,13 @@ const Signup = () => {
     const onSubmit = async (data, e) => {
         const email = data.email;
         const password = data.password;
+        const name = data.name;
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName: data.name })
+        await updateProfile({ displayName: name })
         if (!error) {
             toast.success('Sent Email')
         }
-        e.reset()
+        e.target.reset()
         console.log(data)
         console.log(user)
     }

@@ -18,6 +18,7 @@ const Header = () => {
             user && <li> <NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
         <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
+        <li><NavLink to='/blog'>Blogs</NavLink></li>
         {
             user && <div class="avatar lg:online placeholder">
                 <div class="bg-accent-focus text-white-content rounded-full w-12">
