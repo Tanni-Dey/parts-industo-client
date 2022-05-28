@@ -8,6 +8,7 @@ const Reviews = () => {
             .then(res => res.json())
             .then(data => setAllReviews(data))
     }, [])
+
     return (
         <div className='mb-20 px-10 lg:px-20'>
             <h2 className='uppercase text-primary text-3xl md:text-5xl font-sans'>Our <span className='text-secondary'>Reviews</span></h2>

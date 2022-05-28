@@ -50,7 +50,7 @@ const BussnessSummry = () => {
                     <h4 className='text-left text-4xl font-sans'>Quality Resourcing</h4>
                     <h4 className='text-left text-4xl text-secondary font-sans mt-2'> & Analytics</h4>
 
-                    <p className='my-5 text-left'>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+                    <p className='my-5 text-left'>You can understand our quality by looking at the reviews, we try our best to make the customer happy. If there is any defect in our product, we repair it within one month. Customers can check our products in our factory before buying. We sell the product by checking the mechanical defect in front of the customer, which satisfies our customer.</p>
 
                     <p className='text-left flex items-center'><FiCheckCircle /><span className=' ml-3'>Improving Productivity</span></p>
                     <p className='text-left flex items-center'><FiCheckCircle /><span className=' ml-3'>Enhancing Customer Support</span></p>
