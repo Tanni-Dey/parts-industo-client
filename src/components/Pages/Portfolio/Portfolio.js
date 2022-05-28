@@ -55,7 +55,7 @@ const Portfolio = () => {
             </div>
             <div className='my-20'>
                 <div className='grid grid-cols-1 gap-5 mx-10 lg:mx-20 lg:grid-cols-3'>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-full bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/sJVL5kt/Screenshot-146.png" alt="book-closet" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Book Closet</h2>
@@ -65,7 +65,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-full bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/x191RRk/Screenshot-147.png" alt="book-closet" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Unique Photography</h2>
@@ -75,7 +75,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-full bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/GxhLr6j/Screenshot-148.png" alt="book-closet" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Furniture Reviews</h2>

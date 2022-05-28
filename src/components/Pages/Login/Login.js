@@ -46,7 +46,7 @@ const Login = () => {
     }
 
     return (
-        <div className='my-20'>
+        <div className='my-20 mx-10 lg:mx-20'>
             <h2 className='text-primary font-sans text-3xl'>Please <span className='text-secondary'>Login</span></h2>
             <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
                 <input type="email" placeholder="Your Email" className="input input-bordered input-md w-full max-w-xs mb-2" {...register("email", {

@@ -92,7 +92,7 @@ const MyProfile = () => {
                     </div>
 
                 </div>
-                <div className='my-10'>
+                <div className='my-10 mx-10 lg:mx-auto'>
                     <h2 className='text-secondary font-sans text-xl'>Update Profile</h2>
                     <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
                         <br />

@@ -11,7 +11,7 @@ const Reviews = () => {
     return (
         <div className='mb-20 px-10 lg:px-20'>
             <h2 className='uppercase text-primary text-3xl md:text-5xl font-sans'>Our <span className='text-secondary'>Reviews</span></h2>
-            <div className='grid grid-cols-2 mt-10 lg:grid-cols-4 gap-5'>
+            <div className='grid grid-cols-1 mt-10 lg:grid-cols-4 gap-5'>
                 {
                     allReviews.map(singleReview => <div key={singleReview._id} className='flex items-center p-5 shadow-xl rounded-xl'>
                         <div className="avatar mr-5">

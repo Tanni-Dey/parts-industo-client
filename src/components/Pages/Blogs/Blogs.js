@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div>
             <h2 className='text-3xl font-sans'>Blogs</h2>
-            <div className='px-10 md:px-20 text-left pt-36 pb-20 h-full'>
+            <div className='px-10 md:px-20 text-left pt-10 pb-20 h-full'>
                 <h2 className='font-sans text-2xl'>Q1: How will you improve the performance of a React Application ?</h2>
                 <p className='font-serif text-xl mb-10'>Ans:
                     <ul>
