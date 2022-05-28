@@ -61,7 +61,7 @@ const Portfolio = () => {
                             <h2 className="card-title">Book Closet</h2>
                             <p className='text-left'>Warehouse Project</p>
                             <div className="card-actions justify-end">
-                                <a target='_blank' href="https://book-closet.web.app//"><button className="btn btn-sm btn-primary">Live site</button></a>
+                                <a target='_blank' href="https://book-closet.web.app/"><button className="btn btn-sm btn-primary">Live site</button></a>
                             </div>
                         </div>
                     </div>

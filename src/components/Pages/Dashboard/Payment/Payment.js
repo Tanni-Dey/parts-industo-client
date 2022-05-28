@@ -30,16 +30,7 @@ const Payment = () => {
                     <p>Please Pay ${Number(orderdata.price) * Number(orderdata.orderQuantity)}</p>
                     <Elements stripe={stripePromise}>
                         <Checkout orderdata={orderdata} />
-                    </Elements>{/* 
-                    <div className='card w-full'>
-                        <div className='card-body'>
-
-                        </div>
-                    </div>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-sm btn-secondary text-white">Pay Now</button>
-                    </div>
- */}
+                    </Elements>
                 </div>
             </div>
 
