@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { VscTools } from 'react-icons/vsc';
 import { IoIosPeople } from 'react-icons/io';
 import { AiOutlineLineChart, AiOutlineArrowRight } from 'react-icons/ai';
 import { BiCommentDetail } from 'react-icons/bi';
 import { FiCheckCircle } from 'react-icons/fi';
+import CountUp from 'react-countup';
+import VisibilitySensor from "react-visibility-sensor";
 import { Link } from 'react-router-dom';
 
 const BussnessSummry = () => {
+
+    const [viewPortEntered, setViewPortEntered] = useState(false);
     return (
         <div className='mb-20'>
             <h1 className='text-primary font-sans text-3xl lg:text-5xl uppercase'>Why choose <span className='text-secondary'>us</span></h1>
@@ -17,7 +21,13 @@ const BussnessSummry = () => {
                         <VscTools />
                     </div>
                     <div className="stat-title">Tools</div>
-                    <div className="stat-value text-primary">50+</div>
+                    <div className="stat-value text-primary"><CountUp start={0} end={50} duration={2} >
+                        {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start}>
+                                <span ref={countUpRef} />
+                            </VisibilitySensor>
+                        )}
+                    </CountUp>+</div>
                 </div>
 
                 <div className="stat">
@@ -25,7 +35,16 @@ const BussnessSummry = () => {
                         <IoIosPeople />
                     </div>
                     <div className="stat-title">Customers</div>
-                    <div className="stat-value text-secondary">100+</div>
+                    <div className="stat-value text-secondary">
+
+                        <CountUp start={0} end={100} duration={2} >
+                            {({ countUpRef, start }) => (
+                                <VisibilitySensor onChange={start}>
+                                    <span ref={countUpRef} />
+                                </VisibilitySensor>
+                            )}
+                        </CountUp>+
+                    </div>
                 </div>
 
                 <div className="stat">
@@ -33,14 +52,28 @@ const BussnessSummry = () => {
                         <AiOutlineLineChart />
                     </div>
                     <div className="stat-title">Annual revenue</div>
-                    <div className="stat-value text-primary">120M+</div>
+                    <div className="stat-value text-primary"><CountUp start={0} end={120} duration={2} >
+                        {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start}>
+                                <span ref={countUpRef} />
+                            </VisibilitySensor>
+                        )}
+                    </CountUp>M+
+
+                    </div>
                 </div>
                 <div className="stat">
                     <div className="stat-figure text-secondary text-2xl">
                         <BiCommentDetail />
                     </div>
                     <div className="stat-title">Reviews</div>
-                    <div className="stat-value text-secondary">33K+</div>
+                    <div className="stat-value text-secondary"><CountUp start={0} end={33} duration={2} >
+                        {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start}>
+                                <span ref={countUpRef} />
+                            </VisibilitySensor>
+                        )}
+                    </CountUp>K+</div>
                 </div>
 
             </div>

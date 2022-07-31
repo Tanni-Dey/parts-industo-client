@@ -7,7 +7,13 @@ module.exports = {
       'sans': ['ui-sans-serif', 'Oswald'],
       'serif': ['ui-sans-serif', 'Nanum Gothic']
     },
-    extend: {},
+    extend: {
+
+      backgroundImage: {
+        'svg': "url('/src/image/svg.png')",
+      }
+
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

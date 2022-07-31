@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import Loading from '../../../Shared/Loading/Loading';
 
 const ManageProducts = () => {
+    const [productId, setProductId] = useState('')
     const { data: products, isLoading, refetch } = useQuery('users', () => fetch('https://evening-eyrie-81850.herokuapp.com/tool').then(res => res.json()))
 
     if (isLoading) {
@@ -46,7 +47,7 @@ const ManageProducts = () => {
                             <td>{product.minOrderQ}</td>
                             <td> {product.aviableQuantiy}</td>
 
-                            <td><label for="my-modal-6" className='btn modal-button bg-red-600 border-0 btn-sm rounded-full text-white text-xl'><RiDeleteBin6Line /></label></td>
+                            <td><label for="my-modal-6" onClick={() => setProductId(product._id)} className='btn modal-button bg-red-600 border-0 btn-sm rounded-full text-white text-xl'><RiDeleteBin6Line /></label></td>
 
                             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                             <div className="modal sm:modal-middle">
@@ -55,7 +56,7 @@ const ManageProducts = () => {
                                     <p className="py-4">Select Yes or No</p>
                                     <div className="modal-action">
                                         <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
-                                        <label onClick={() => handleDelete(product._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
+                                        <label onClick={() => handleDelete(productId)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                                     </div>
                                 </div>
                             </div>

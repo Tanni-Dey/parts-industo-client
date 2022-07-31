@@ -10,6 +10,7 @@ import Loading from '../../../Shared/Loading/Loading';
 const MyOrders = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
+    const [orderId, setOrderId] = useState('')
 
 
     const { data: myorders, isLoading, refetch } = useQuery(['myorders', user.email], () => fetch(`https://evening-eyrie-81850.herokuapp.com/myorder?email=${user.email}`, {
@@ -79,7 +80,7 @@ const MyOrders = () => {
                                 !order.paid ? <td><Link to={`/dashboard/payment/${order._id}`} className='btn btn-secondary btn-sm'>Pay</Link></td> : <td className='text-green-500 p-5 font-bold'>Paid <p className='font-serif text-xs text-yellow-500'>Transaction id<p>{order.transId}</p></p></td>
                             }
 
-                            {order.status ? <td className='text-warning capitalize'>{order.status}</td> : <td><label for="my-modal-6" className='btn modal-button btn-secondary btn-sm'>cancel</label>
+                            {order.status ? <td className='text-warning capitalize'>{order.status}</td> : <td><label for="my-modal-6" onClick={() => setOrderId(order._id)} className='btn modal-button btn-secondary btn-sm'>cancel</label>
 
                                 <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                                 <div className="modal sm:modal-middle">
@@ -88,7 +89,7 @@ const MyOrders = () => {
                                         <p className="py-4">Select Yes or No</p>
                                         <div className="modal-action">
                                             <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
-                                            <label onClick={() => handleDelete(order._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
+                                            <label onClick={() => handleDelete(orderId)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                                         </div>
                                     </div>
                                 </div></td>}

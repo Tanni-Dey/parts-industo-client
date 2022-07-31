@@ -32,7 +32,7 @@ const SingleOrder = ({ order, refetch }) => {
                     <p className="py-4">Select Yes or No</p>
                     <div className="modal-action">
                         <label for="my-modal-6" className="btn btn-sm btn-error">No</label>
-                        <label onClick={() => handleDelete(order._id)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
+                        <label onClick={() => handleDelete(order)} for="my-modal-6" className="btn btn-sm btn-success">Yes</label>
                     </div>
                 </div>
             </div>

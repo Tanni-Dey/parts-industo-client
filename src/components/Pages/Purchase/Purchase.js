@@ -12,8 +12,17 @@ const Purchase = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth)
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [spinner, setSpinner] = useState(true)
 
-    const { data: order, isLoading } = useQuery('order', () => fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`).then(res => res.json()))
+    const { data: order, isLoading, refetch } = useQuery('orderd', () => fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`).then(res => res.json()))
+
+    setTimeout(() => setSpinner(false), 2000)
+
+    if (isLoading || spinner) {
+        refetch()
+        return <Loading />
+    }
+
 
 
     const onSubmit = async (data, e) => {
@@ -28,9 +37,7 @@ const Purchase = () => {
         console.log(data);
         e.target.reset()
     }
-    if (isLoading) {
-        return <Loading />
-    }
+
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 px-10 py-20 lg:px-20'>
