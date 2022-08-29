@@ -1,9 +1,10 @@
 import React from 'react';
+import banner from '../../../../image/banner.png'
 
 const Banner = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2'>
-            <div className='p-5 lg:pl-16 bg-gray-100 text-primary uppercase'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center py-20 bg-gray-100'>
+            <div className='p-5 lg:pl-20  text-primary uppercase'>
                 <p className='my-5 text-left text-secondary'>Welcome to Parts Industo</p>
 
                 <h4 className='text-left text-7xl font-sans'>Best Industry</h4>
@@ -15,7 +16,7 @@ const Banner = () => {
                 </div>
 
             </div>
-            <div className="carousel w-full h-96">
+            {/*  <div className="carousel w-full h-96">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img alt='' src="https://static8.depositphotos.com/1225664/995/i/950/depositphotos_9955164-stock-photo-printed-circuit-board-of-electronics.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -37,6 +38,9 @@ const Banner = () => {
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
+            </div> */}
+            <div>
+                <img className='h-96' src={banner} alt="" />
             </div>
         </div>
     );

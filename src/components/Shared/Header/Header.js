@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
+import logo from '../../../image/logo.png'
 
 const Header = () => {
     const [user] = useAuthState(auth)
@@ -37,7 +38,9 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Parts Industo</Link>
+                    <Link to='/' className=" items-center flex btn btn-ghost normal-case text-xl">
+                        <img className='w-6 mr-2' src={logo} alt='' />
+                        Parts Industo</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
