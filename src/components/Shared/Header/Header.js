@@ -17,8 +17,6 @@ const Header = () => {
         {
             user && <li> <NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
-        <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
-        <li><NavLink to='/blog'>Blogs</NavLink></li>
         {
             user && <div className="avatar lg:online placeholder">
                 <div className="bg-accent-focus text-white-content rounded-full w-12">
@@ -27,7 +25,6 @@ const Header = () => {
             </div>
         }
     </>
-    console.log(user);
     return (
         <div className='bg-primary lg:px-20'>
             <div className="navbar text-white">
