@@ -6,7 +6,7 @@ import SingleOrder from './SingleOrder';
 
 const ManageOrders = () => {
     const [orderId, setOrderId] = useState('')
-    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('https://evening-eyrie-81850.herokuapp.com/order', {
+    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('https://parts-industo.onrender.com/order', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -19,7 +19,7 @@ const ManageOrders = () => {
 
 
     const handleShipped = (id) => {
-        fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
+        fetch(`https://parts-industo.onrender.com/order/${id}`, {
             method: 'PATCH',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const ManageOrders = () => {
 
 
     const handleDelete = id => {
-        fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
+        fetch(`https://parts-industo.onrender.com/order/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

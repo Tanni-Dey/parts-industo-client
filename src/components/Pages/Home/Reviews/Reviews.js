@@ -5,7 +5,7 @@ const Reviews = () => {
     const [allReviews, setAllReviews] = useState([])
 
     useEffect(() => {
-        fetch('https://evening-eyrie-81850.herokuapp.com/review')
+        fetch('https://parts-industo.onrender.com/review')
             .then(res => res.json())
             .then(data => setAllReviews(data))
     }, [])
@@ -19,6 +19,10 @@ const Reviews = () => {
                         singleReview={singleReview}
                         key={singleReview._id}
                     />
+
+
+
+
 
                         /* <div key={singleReview._id} className='flex items-center p-5 shadow-xl rounded-xl'>
                             <div className="avatar mr-5">
@@ -40,7 +44,12 @@ const Reviews = () => {
                             </div>
                         </div> */
                     )
+
+
                 }
+
+
+
 
             </div>
         </div>

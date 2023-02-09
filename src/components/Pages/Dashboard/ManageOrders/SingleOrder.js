@@ -7,7 +7,7 @@ const SingleOrder = ({ order, refetch }) => {
 
     const handleDelete = id => {
         if (!order.paid) {
-            fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
+            fetch(`https://parts-industo.onrender.com/order/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

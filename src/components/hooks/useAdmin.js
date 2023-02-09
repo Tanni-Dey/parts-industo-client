@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     const [adminLoading, setLoading] = useState(true)
     const email = user?.email;
     if (email) {
-        fetch(`https://evening-eyrie-81850.herokuapp.com/admin/${email}`, {
+        fetch(`https://parts-industo.onrender.com/admin/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

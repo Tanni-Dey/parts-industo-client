@@ -14,7 +14,7 @@ const Purchase = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [spinner, setSpinner] = useState(true)
 
-    const { data: order, isLoading, refetch } = useQuery('orderd', () => fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`).then(res => res.json()))
+    const { data: order, isLoading, refetch } = useQuery('orderd', () => fetch(`https://parts-industo.onrender.com/tool/${id}`).then(res => res.json()))
 
     setTimeout(() => setSpinner(false), 2000)
 
@@ -26,7 +26,7 @@ const Purchase = () => {
 
 
     const onSubmit = async (data, e) => {
-        fetch('https://evening-eyrie-81850.herokuapp.com/order', {
+        fetch('https://parts-industo.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -29,7 +29,7 @@ const AddReview = () => {
                     rating: data.rating
                 }
                 //create review
-                fetch('https://evening-eyrie-81850.herokuapp.com/review', {
+                fetch('https://parts-industo.onrender.com/review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

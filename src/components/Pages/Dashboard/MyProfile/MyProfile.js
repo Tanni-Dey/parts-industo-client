@@ -9,7 +9,7 @@ import Loading from '../../../Shared/Loading/Loading';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://evening-eyrie-81850.herokuapp.com/profile?email=${user.email}`, {
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://parts-industo.onrender.com/profile?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const MyProfile = () => {
                     phone: data.phone,
                     linkedin: data.linkedin
                 }
-                fetch(`https://evening-eyrie-81850.herokuapp.com/profile?email=${user.email}`, {
+                fetch(`https://parts-industo.onrender.com/profile?email=${user.email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
@@ -60,7 +60,8 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <h2 className='text-primary font-sans text-2xl'>My <span className='text-secondary'>Profile</span></h2>
+            <h2 className='text-primary font-sans text-left mb-3 pl-2 text-2xl'>My <span className='text-secondary'>Profile</span></h2>
+            <hr />
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                 <div className='text-left px-10 mt-20'>
 

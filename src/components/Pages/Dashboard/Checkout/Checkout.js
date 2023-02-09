@@ -16,7 +16,7 @@ const Checkout = ({ orderdata }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://evening-eyrie-81850.herokuapp.com/create-payment-intent", {
+        fetch("https://parts-industo.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const Checkout = ({ orderdata }) => {
                 transactionid: paymentIntent?.id
             }
 
-            fetch(`https://evening-eyrie-81850.herokuapp.com/payment/${_id}`, {
+            fetch(`https://parts-industo.onrender.com/payment/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

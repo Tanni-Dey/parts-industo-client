@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L3x8rDiYiTfEltlPemdr6ZZMSpViMGTqGqNi
 
 const Payment = () => {
     const { id } = useParams();
-    const { data: orderdata, isLoading } = useQuery(['payment', id], () => fetch(`https://evening-eyrie-81850.herokuapp.com/payment/${id}`, {
+    const { data: orderdata, isLoading } = useQuery(['payment', id], () => fetch(`https://parts-industo.onrender.com/payment/${id}`, {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -27,7 +27,7 @@ const AddProduct = () => {
                     minOrderQ: data.minOrderQ,
                     aviableQuantiy: data.aviableQuantiy
                 }
-                fetch('https://evening-eyrie-81850.herokuapp.com/addtool', {
+                fetch('https://parts-industo.onrender.com/addtool', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

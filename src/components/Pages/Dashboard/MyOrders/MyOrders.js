@@ -13,7 +13,7 @@ const MyOrders = () => {
     const [orderId, setOrderId] = useState('')
 
 
-    const { data: myorders, isLoading, refetch } = useQuery(['myorders', user.email], () => fetch(`https://evening-eyrie-81850.herokuapp.com/myorder?email=${user.email}`, {
+    const { data: myorders, isLoading, refetch } = useQuery(['myorders', user.email], () => fetch(`https://parts-industo.onrender.com/myorder?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const currentOrder = myorders.find(order => order._id === id)
         if (!currentOrder.paid) {
-            fetch(`https://evening-eyrie-81850.herokuapp.com/order/${id}`, {
+            fetch(`https://parts-industo.onrender.com/order/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

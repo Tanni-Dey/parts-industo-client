@@ -5,7 +5,7 @@ import Part from './Part/Part';
 
 const Parts = () => {
 
-    const { data: parts, isLoading } = useQuery('tools', () => fetch('https://evening-eyrie-81850.herokuapp.com/tool').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('tools', () => fetch('https://parts-industo.onrender.com/tool').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

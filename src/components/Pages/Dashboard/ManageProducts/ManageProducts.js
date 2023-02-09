@@ -5,14 +5,14 @@ import Loading from '../../../Shared/Loading/Loading';
 
 const ManageProducts = () => {
     const [productId, setProductId] = useState('')
-    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('https://evening-eyrie-81850.herokuapp.com/tool').then(res => res.json()))
+    const { data: products, isLoading, refetch } = useQuery('users', () => fetch('https://parts-industo.onrender.com/tool').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
 
     const handleDelete = (id) => {
-        fetch(`https://evening-eyrie-81850.herokuapp.com/tool/${id}`, {
+        fetch(`https://parts-industo.onrender.com/tool/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
